@@ -1,0 +1,24 @@
+{
+  "name": "ts-crypto",
+  "version": "0.1.0",
+  "description": "typescript crypto utilities",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node ./dist/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xJuan/ts-crypto.git"
+  },
+  "author": "0xJuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0xJuan/ts-crypto/issues"
+  },
+  "homepage": "https://github.com/0xJuan/ts-crypto#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}
