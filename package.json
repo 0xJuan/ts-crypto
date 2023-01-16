@@ -5,10 +5,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "/dist/**/*"
   ],
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "test": "npm run build && node ./dist/index"
   },
   "repository": {
