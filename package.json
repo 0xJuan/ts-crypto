@@ -2,7 +2,11 @@
   "name": "ts-crypto",
   "version": "0.1.0",
   "description": "typescript crypto utilities",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "npm run build && node ./dist/index"
