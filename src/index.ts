@@ -1,1 +1,1 @@
-export * as AES256 from '../src/lib/AES256'
+export { AES256 } from './lib/AES256'
