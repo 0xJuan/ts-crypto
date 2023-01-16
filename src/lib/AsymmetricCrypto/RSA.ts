@@ -37,14 +37,14 @@ export const privateDecrypt = (privateKey: string, encryptedtext: string): strin
     return decryptedData.toString('utf-8')
 }
 
-export const createSign = (privateKey: string, message: string): string => {
+export const signMessage = (privateKey: string, message: string): string => {
     const signer = crypto.createSign(ALGORITHM_SIGNATURE)
     signer.update(message)
     signer.end()
     return signer.sign(privateKey, 'hex')
 }
 
-export const createVerify = (publicKey: string, message: string, signature: string): boolean => {
+export const verifyMessage = (publicKey: string, message: string, signature: string): boolean => {
     const verifier = crypto.createVerify(ALGORITHM_SIGNATURE)
     verifier.update(message)
     verifier.end()
