@@ -1,7 +1,9 @@
 import { createCipheriv, createDecipheriv, randomBytes, scryptSync } from 'crypto'
 
 
-export const encrypt = (key: string, cleartext: string, algorithm: string = 'aes256'): string => {
+const algorithm: string = 'aes256'
+
+export const encrypt = (key: string, cleartext: string): string => {
     const _salt = randomBytes(8).toString('hex')
     const _hash = scryptSync(key, _salt, 32)
     const _iv = randomBytes(8).toString('hex')
@@ -11,7 +13,7 @@ export const encrypt = (key: string, cleartext: string, algorithm: string = 'aes
     return `${_salt}:${_iv}:${encrypted}`
 }
 
-export const decrypt = (key: string, encryptedtext: string, algorithm: string = 'aes256'): string => {
+export const decrypt = (key: string, encryptedtext: string): string => {
     const [_salt, _iv, _encryptedtext] = encryptedtext.split(':')
     const _hash = scryptSync(key, _salt, 32)
     const _decipher = createDecipheriv(algorithm, _hash, _iv)
